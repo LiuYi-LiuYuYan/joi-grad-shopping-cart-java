@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ShoppingCart {
+    /**
+     * 这里可以改为用map存放 可以快速得到每个商品对应的个数
+     */
     private List<Product> products;
     private Customer customer;
 
@@ -16,9 +19,19 @@ public class ShoppingCart {
         products.add(product);
     }
 
+    /**
+     * 计算购物车的当中商品的价值 并返回一个最后的订单实体
+     *
+     * 打折优惠规则：
+     *  当产品不在任何优惠范围内时，忠诚度积分可以获得更多。
+     *  顾客每购买5美元的产品就可获得1分。
+     *  顾客每购买10美元的产品并享受10%的折扣，就可获得1个积分。
+     *  顾客每购买15美元的产品并享受15%的折扣，就可获得1个积分。
+     * @return
+     */
     public Order checkout() {
         double totalPrice = 0;
-
+        // 这里有点硬编码了 可以修改为按照DIS_10转换为一个数值
         int loyaltyPointsEarned = 0;
         for (Product product : products) {
             double discount = 0;
