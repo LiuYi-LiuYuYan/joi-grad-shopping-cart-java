@@ -25,7 +25,7 @@ public class SampleApp {
         shoppingCart.addProduct(product3);
         System.out.println(shoppingCart);
 
-        // 结账
+        // 结账 测试
         Order order = shoppingCart.checkout();
         System.out.println(order.toString());
     }
