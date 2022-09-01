@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SampleApp {
     public static void main(String[] args) {
-        // 产品
+        // 产品 主函数
         Product product1 = new Product(10.0, "DIS_10_PRODUCT1", "product 1");
         Product product2 = new Product(20.0, "DIS_10_PRODUCT2", "product 2");
 
